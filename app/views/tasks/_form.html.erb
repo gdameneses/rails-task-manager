@@ -1,0 +1,10 @@
+<%= form_for(@task) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :details %>
+  <%= f.text_field :details %>
+  <%= f.label :completed  if task.persisted? %>
+  <%= f.check_box :completed if task.persisted?  %>
+  <%= f.submit %>
+<% end %>
+<%= link_to '<button type="button" class="btn btn-light">Go back to Tasks</button>'.html_safe, root_path %>
